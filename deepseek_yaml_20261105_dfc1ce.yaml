@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: veil-x-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /health
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false  # You will paste the token in the Render dashboard
